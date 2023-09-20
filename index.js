@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
+    document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("calcularINSS").addEventListener("click", calcularINSS);
     document.getElementById("calcularIRPF").addEventListener("click", calcularIRPF);
     document.getElementById("calcularSalarioLiquido").addEventListener("click", calcularSalarioLiquido);
