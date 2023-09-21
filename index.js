@@ -8,7 +8,7 @@ function calcularINSS() {
     const salarioBruto = parseFloat(document.getElementById('salarioBruto').value);
     let inss;
 
-    // Cálculo do INSS
+    //INSS aqui
     if (salarioBruto <= 1751.81) {
         inss = salarioBruto * 0.08;
     } else if (salarioBruto <= 2919.72) {
@@ -26,7 +26,7 @@ function calcularIRPF() {
     const salarioBruto = parseFloat(document.getElementById('salarioBruto').value);
     let irpf;
 
-    // Cálculo do IRPF (exemplo simplificado)
+    //IRPF calculo aqui
     if (salarioBruto <= 1903.98) {
         irpf = 0;
     } else if (salarioBruto <= 2826.65) {
@@ -44,7 +44,7 @@ function calcularSalarioLiquido() {
     const salarioBruto = parseFloat(document.getElementById('salarioBruto').value);
     let inss, irpf;
 
-    // Cálculo do INSS
+    //Cauculo  INSS
     if (salarioBruto <= 1751.81) {
         inss = salarioBruto * 0.08;
     } else if (salarioBruto <= 2919.72) {
@@ -55,7 +55,7 @@ function calcularSalarioLiquido() {
         inss = 5839.45 * 0.11;
     }
 
-    // Cálculo do IRPF (exemplo simplificado)
+    //Calculo IRPF 
     if (salarioBruto <= 1903.98) {
         irpf = 0;
     } else if (salarioBruto <= 2826.65) {
