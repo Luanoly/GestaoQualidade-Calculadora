@@ -1,9 +1,3 @@
-document.addEventListener("DOMContentLoaded", function () {
-    document.getElementById("calcularINSS").addEventListener("click", calcularINSS);
-    document.getElementById("calcularIRPF").addEventListener("click", calcularIRPF);
-    document.getElementById("calcularSalarioLiquido").addEventListener("click", calcularSalarioLiquido);
-});
-
 // Imprimindo o valor
 function calcularINSS() {
     const salarioBruto = parseFloat(document.getElementById('salarioBruto').value);
@@ -13,11 +7,11 @@ function calcularINSS() {
     if (salarioBruto <= 1320) {
         inss = salarioBruto * 0.075;
     } else if (salarioBruto <= 2571.29) {
-        inss = salarioBruto * 0.09;
+        inss = (salarioBruto * 0.09) - 19.80;
     } else if (salarioBruto <= 3856.94) {
-        inss = salarioBruto * 0.12;
+        inss = (salarioBruto * 0.12) - 96.94;
     } else if (salarioBruto <= 7507.48) {
-        inss = salarioBruto * 0.14;
+        inss = (salarioBruto * 0.14) - 174.08;
     } else {
         inss = 7507.49;
     }
@@ -28,17 +22,16 @@ function calcularINSS() {
 // Retornando o valor
 function inss(salarioBruto) {
 
-    //INSS aqui
     let inss = 0
 
     if (salarioBruto <= 1320) {
         inss = salarioBruto * 0.075;
     } else if (salarioBruto <= 2571.29) {
-        inss = salarioBruto * 0.09;
+        inss = (salarioBruto * 0.09) - 19.80;
     } else if (salarioBruto <= 3856.94) {
-        inss = salarioBruto * 0.12;
+        inss = (salarioBruto * 0.12) - 96.94;
     } else if (salarioBruto <= 7507.48) {
-        inss = salarioBruto * 0.14;
+        inss = (salarioBruto * 0.14) - 174.08;
     } else {
         inss = 7507.49;
     }
@@ -55,13 +48,13 @@ function calcularIRPF() {
     if (baseCalculoIrpf <= 1903.98) {
         irpf = 0;
     } else if (baseCalculoIrpf <= 2826.65) {
-        irpf = (salarioBruto) * 0.075 - 158.40;
+        irpf = (baseCalculoIrpf * 0.075) - 158.40;
     } else if (baseCalculoIrpf <= 3751.05) {
-        irpf = (salarioBruto) * 0.015 - 370.40;
+        irpf = (baseCalculoIrpf * 0.015) - 370.40;
     } else if (baseCalculoIrpf <= 4664.68) {
-        irpf = (salarioBruto) * 0.225 - 651.73;
+        irpf = (baseCalculoIrpf * 0.225) - 651.73;
     } else {
-        irpf = (baseCalculoIrpf) * 0.275 - 884.96;
+        irpf = (baseCalculoIrpf * 0.275) - 884.96;
     }
 
     document.getElementById('resultado').innerHTML = `IRPF a ser pago: R$ ${irpf.toFixed(2)}`;
@@ -98,3 +91,9 @@ function calcularSalarioLiquido() {
     const salarioLiquido = salarioBruto - inss - irpf;
     document.getElementById('resultado').innerHTML = `Salário Líquido: R$ ${salarioLiquido.toFixed(2)}`;
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("calcularINSS").addEventListener("click", calcularINSS);
+    document.getElementById("calcularIRPF").addEventListener("click", calcularIRPF);
+    document.getElementById("calcularSalarioLiquido").addEventListener("click", calcularSalarioLiquido);
+});
