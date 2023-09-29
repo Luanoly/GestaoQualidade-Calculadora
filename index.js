@@ -1,5 +1,7 @@
 // Função para calcular o INSS
 function calcularINSS(salarioBruto) {
+    const salarioBrutoValido = salarioBruto <= 0 ? 0 : salarioBruto;
+
     let inss = 0;
 
     if (salarioBruto <= 1320) {
